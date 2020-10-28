@@ -41,12 +41,12 @@ class Waveform(DPT.DPObject):
         self.channel_filename = [os.path.basename(pwd)]  
         template_fileanme = os.path.join(DPT.levels.resolve_level('day', self.channel_filename[0]), 'mountains', self.channel_filename[0], 'output', 'templates.hkl')
         
-        templates = hkl.load(template_filename)
+        templates = hkl.load(template_fileanme)
         self.data = [np.squeeze(templates)]
 
         # check on the mountainsort template data and create a DPT object accordingly
         # Example:
-        if len(data):
+        if len(self.data):
             # create object if data is not empty
             DPT.DPObject.create(self, *args, **kwargs)
         else:
