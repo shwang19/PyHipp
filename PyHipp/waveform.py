@@ -13,6 +13,7 @@ class Waveform(DPT.DPObject):
         DPT.DPObject.__init__(self, *args, **kwargs)
 
     def create(self, *args, **kwargs):
+        
         # this function will be called once to create this waveform object
         
         # one neat property of Object-Oriented Programming (OOP) structure is that 
@@ -35,7 +36,6 @@ class Waveform(DPT.DPObject):
         #
         # In this way, you don't need to return and pass in so many arguments 
         # across different functions anymore :)
-        
         pwd = os.path.normpath(os.getcwd());
         # 'channelxxx, xxx is the number of the channel'
         self.channel_filename = [os.path.basename(pwd)]  
@@ -44,7 +44,6 @@ class Waveform(DPT.DPObject):
         templates = hkl.load(template_filename)
         self.data = [np.squeeze(templates)]
 
-z
         # check on the mountainsort template data and create a DPT object accordingly
         # Example:
         if len(data):
